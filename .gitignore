@@ -132,3 +132,5 @@ data/hourly.json
 data/hourly3-forecast.json
 data/livedata.json
 .DS_Store
+.secrets.json
+secrets.json
