@@ -1,8 +1,8 @@
 """Constant definition for pyknmi."""
 
 """ Examples of URLs
-    Current Data: http://weerlive.nl/api/json-data-10min.php?key=demo&locatie=52.0910879,5.1124231
-    Forecast Data: https://data.meteoserver.nl/api/uurverwachting_gfs.php?locatie=Utrecht&key=342b7e36ac
+    Current Data: http://weerlive.nl/api/json-data-10min.php?key=API_KEY&locatie=LAT,LON
+    Forecast Data: https://data.meteoserver.nl/api/uurverwachting_gfs.php?locatie=LAT,LON&key=API_KEY
 """
 
 FORECAST_BASE_URL = "https://data.meteoserver.nl/api/uurverwachting_gfs.php"
