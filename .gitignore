@@ -128,3 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 pyknmi.code-workspace
+data/hourly.json
+data/hourly3-forecast.json
+data/livedata.json
