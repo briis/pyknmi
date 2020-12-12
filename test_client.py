@@ -22,11 +22,11 @@ async def main() -> None:
     filepath = f"{top_path}/secrets.json"
     with open(filepath) as json_file:
         data = json.load(json_file)
-        api_key = data["connection"]["api_key"]
+        API_KEY = data["connection"]["api_key"]
 
     logging.basicConfig(level=logging.DEBUG)
 
-    knmi = KnmiData(api_key, LATITUDE, LONGITUDE)
+    knmi = KnmiData(API_KEY, LATITUDE, LONGITUDE)
 
     start = time.time()
 
