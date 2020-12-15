@@ -22,22 +22,31 @@ async def main() -> None:
     filepath = f"{top_path}/secrets.json"
     with open(filepath) as json_file:
         data = json.load(json_file)
-        API_KEY = data["connection"]["api_key"]
+        api_key = data["connection"]["api_key"]
 
     logging.basicConfig(level=logging.DEBUG)
 
-    knmi = KnmiData(API_KEY, LATITUDE, LONGITUDE)
+    knmi = KnmiData(api_key, LATITUDE, LONGITUDE)
 
     start = time.time()
 
     try:
 
-        _LOGGER.info("GETTING CURRENT DATA:")
-        data = await knmi.current_data()
-        print(json.dumps(data, indent=1))
-        # for row in data:
-        #     _LOGGER.info(f"{row.beaufort_value} - {row.beaufort_text} - {row.city_name} - {row.wind_cdir} - {row.wind_dir} - {row.ob_time} - {row.obs_time_local} - {row.timezone} - {row.sunrise} - {row.slp}")
+        # _LOGGER.info("GETTING RAW FORECAST DATA:")
+        # data = await knmi.raw_forecast_data()
+        # print(json.dumps(data, indent=1))
 
+        # _LOGGER.info("GETTING CURRENT DATA:")
+        # data = await knmi.current_data()
+        # print(json.dumps(data, indent=1))
+
+        # _LOGGER.info("GETTING HOURLY FORECAST:")
+        # data = await knmi.hourly_data()
+        # print(json.dumps(data, indent=1))
+
+        _LOGGER.info("GETTING DAILY FORECAST:")
+        data = await knmi.daily_data()
+        print(json.dumps(data, indent=1))
 
     except KnmiError as err:
         _LOGGER.info(err)
